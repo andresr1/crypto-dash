@@ -21,11 +21,11 @@ const NavLink = styled.div`
     `}
 `;
 
-toProperCase = (lower) => {
+function toProperCase(lower) {
     return lower.charAt(0).toUpperCase() + lower.substr(1);
 };
 
-NavItem = ({ name }) => {
+function NavItem({ name }) {
     return (
         <AppContext.Consumer>
             {({ firstVisit, page, setPage }) => (

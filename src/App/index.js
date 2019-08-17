@@ -1,11 +1,20 @@
 import React from 'react';
 import './App.css';
 import AppLayout from './AppLayout';
+import { AppProvider } from './AppProvider';
+import AppBar from './AppBar';
+import Content from '../Shared/Content';
+import Dashboard from '../Dashboard';
 
 function App() {
     return (
       <AppLayout>
-        <h1>Initial Setup & AppLayout</h1>
+        <AppProvider>
+          <AppBar />
+          <Content>
+            <Dashboard />
+          </Content>
+        </AppProvider>
       </AppLayout>
     );
 }

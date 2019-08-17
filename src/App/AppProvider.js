@@ -62,16 +62,16 @@ export class AppProvider extends React.Component {
 
     fetchHistorical = async () => {
         if (this.state.firstVisit) return;
-        let results = await this.fetchHistorical();
+        let results = await this.historical();
         let historical = [
             {
                 name: this.state.currentFavorite,
-                data: results.map((ticker, index) => {
+                data: results.map((ticker, index) => [
                     moment()
                         .subtract({ [this.state.timeInterval]: TIME_UNITS - index })
                         .valueOf(),
                     ticker.USD
-                })
+                ])
             }
         ];
         this.setState({ historical });
@@ -142,7 +142,7 @@ export class AppProvider extends React.Component {
 
     setFilteredCoins = filteredCoins => this.setState({ filteredCoins });
 
-    setCurrentFavorite = sym => {
+    setCurrentFavorite = (sym) => {
         this.setState(
             {
                 currentFavorite: sym,
