@@ -16,6 +16,7 @@ export class AppProvider extends React.Component {
             page: "dashboard",
             favorites: ["BTC", "ETH", "XRP"], // Default favorites on app start up.
             timeInterval: "months", // default time for data grid in graph
+            ...this.savedSettings(),
             setPage: this.setPage,
             addCoin: this.addCoin,
             removeCoin: this.removeCoin,
@@ -24,7 +25,7 @@ export class AppProvider extends React.Component {
             setFilteredCoins: this.setFilteredCoins,
             setCurrentFavorite: this.setCurrentFavorite,
             changeChartSelect: this.changeChartSelect,
-            ...this.savedSettings()
+
         };
     }
 

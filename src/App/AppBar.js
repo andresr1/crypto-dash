@@ -15,10 +15,11 @@ const Bar = styled.div`
 const NavLink = styled.div`
     cursor: pointer;
     ${props =>
-    css`
-        width: 100px;
-        border-bottom: 2px solid red;
-    `}
+        props.active &&
+        css`
+            width: 100px;
+            border-bottom: 2px solid red;
+        `}
 `;
 
 function toProperCase(lower) {

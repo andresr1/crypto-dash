@@ -4,11 +4,12 @@ import styled, { css } from 'styled-components';
 const CoinImage = styled.img`
     height: 50px;
     ${props => 
-    css`
-        height: 200px;
-        margin: auto;
-        display: block;
-    `}
+        props.spotlight &&
+        css`
+            height: 200px;
+            margin: auto;
+            display: block;
+        `}
 `;
 
 export default function({ coin, spotlight }) {
@@ -16,7 +17,7 @@ export default function({ coin, spotlight }) {
         <CoinImage
             spotlight={spotlight}
             alt={coin.coinSymbol}
-            src={`http://cryptocompare.com/${coin.imageUrl}`}
+            src={`http://cryptocompare.com/${coin.ImageUrl}`}
         />
     );
 }

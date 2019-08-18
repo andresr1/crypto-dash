@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import {
     subtleBoxShadow,
@@ -13,21 +12,21 @@ export const Tile = styled.div`
     padding: 10px;
 `;
 
-export const selectableTile = styled(Tile)`
+export const SelectableTile = styled(Tile)`
     &:hover {
         cursor: pointer;
         ${greenBoxShadow}
     }
 `;
 
-export const DeletableTile = styled(selectableTile)`
+export const DeletableTile = styled(SelectableTile)`
     &:hover {
         cursor: pointer;
         ${redBoxShadow}
     }
 `;
 
-export const DisabledTile = style(Tile)`
+export const DisabledTile = styled(Tile)`
     pointer-events: none;
     opacity: 0.4;
 `;
